@@ -6,13 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Project Planner';
+  title = 'ETA';
   type;
   data;
   options;
 
   constructor() {
-    this.type = 'line';
+    this.type = 'horizontalBar';
     this.data = {
       labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
       datasets: [
@@ -23,6 +23,14 @@ export class AppComponent {
       ]
     };
     this.options = {
+      scales: {
+        xAxes: [{
+          stacked: true
+        }],
+        yAxes: [{
+          stacked: true
+        }]
+      },
       responsive: true,
       maintainAspectRatio: false
     };
