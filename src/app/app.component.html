@@ -1,5 +1,37 @@
-<h1>
-  Welcome to {{ title }}!
-</h1>
-<chart [type]="type" [data]="data" [options]="options"></chart>
 
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+  <mat-toolbar color="primary" class="header-bar">
+    <button class="burger-menu-button" mat-icon-button (click)="snav.toggle()">
+      <mat-icon class="burger-menu-icon">menu</mat-icon>
+    </button>
+    <h1 class="example-app-name">ETA - Estimating Task Analysis</h1>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <p>Option</p>
+    <h1>Log Out</h1>
+  </mat-toolbar>
+  <mat-sidenav-container class="example-sidenav-container" (backdropClick)="snav.close()"
+                         [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+                 [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+      <mat-nav-list>
+        <p> Chart option 1 </p>
+        <p> Chart option 2 </p>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <div class="chart-container">
+        <canvas baseChart
+                [datasets]="lineChartData"
+                [labels]="lineChartLabels"
+                [options]="lineChartOptions"
+                [colors]="lineChartColors"
+                [legend]="lineChartLegend"
+                [chartType]="lineChartType"
+                (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)"></canvas>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
