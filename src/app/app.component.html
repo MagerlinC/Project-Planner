@@ -10,13 +10,15 @@
     <p>Option</p>
     <h1>Log Out</h1>
   </mat-toolbar>
+
   <mat-sidenav-container class="example-sidenav-container" (backdropClick)="snav.close()"
                          [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
-    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+
+    <mat-sidenav class="sidenav-options" #snav (keydown.escape)="close('escape')" disableClose [mode]="mobileQuery.matches ? 'over' : 'side'"
                  [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
-      <mat-nav-list>
-        <p> Chart option 1 </p>
-        <p> Chart option 2 </p>
+      <mat-nav-list class="sidenav-list">
+        <p class="sidenav-list-item"> Chart option 1 </p>
+        <p class="sidenav-list-item"> Chart option 2 </p>
       </mat-nav-list>
     </mat-sidenav>
 
@@ -35,3 +37,4 @@
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>
+

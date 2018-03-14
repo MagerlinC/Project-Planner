@@ -12,6 +12,14 @@ import {MediaMatcher} from "@angular/cdk/layout";
 export class AppComponent {
   title = 'ETA';
   mobileQuery: MediaQueryList;
+  @ViewChild('sidenav') sidenav: MatSidenav;
+
+  reason = '';
+
+  close(reason: string) {
+    this.reason = reason;
+    this.sidenav.close();
+  }
 
   private _mobileQueryListener: () => void;
 

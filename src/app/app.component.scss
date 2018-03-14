@@ -1,5 +1,5 @@
 
-h1 {
+h1, body {
   font-family: Roboto;
 }
 
@@ -8,7 +8,7 @@ h1 {
 .header-bar {
   display: grid;
   grid-gap: 2%;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 0.912fr 1fr 1fr 1fr 1fr 1fr;
   justify-items: left;
   padding-left: 0px;
 }
@@ -50,19 +50,30 @@ h1 {
 
 /* SIDENAV */
 
+.sidenav-options {
+
+}
+
+.sidenav-list {
+  padding: 15%;
+  width: 100%;
+}
+.sidenav-list-item {
+  font-size: 1.4em;
+  padding-bottom: 10%;
+}
 
 mat-sidenav {
   max-height: 100%;
 }
 .example-container {
-  display: flex;
-  flex-direction: column;
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
 }
+
 
 .example-is-mobile .example-toolbar {
   position: fixed;

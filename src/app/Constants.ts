@@ -8,7 +8,7 @@ export class Constants {
   public static GREY = new Color(148, 159, 177, 1);
   public static GREEN = new Color(80, 174, 84, 1);
   public static LIGHTRED = new Color(253, 162, 182, 1);
-  public static BROWN = new Color(120, 85, 73, 1);
+  public static BROWN = new Color(125, 95, 73, 1);
   public static borderDarkenFactor = 40;
 
   public static darkenColor(color: Color, factor: number) {
